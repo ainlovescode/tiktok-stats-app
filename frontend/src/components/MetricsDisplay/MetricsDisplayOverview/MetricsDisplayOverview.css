@@ -1,0 +1,20 @@
+.metrics-display__overview {
+    margin:auto;
+    max-width:75%;
+    min-width:75%;
+    border: 1px solid lightgray;
+}
+
+.user__profile-photo{
+    margin-top:32px;
+}
+
+img {
+    border-radius:50%;
+    width:100px;
+}
+
+.bold {
+    font-size:24px;
+    font-weight:700;
+}
