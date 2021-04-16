@@ -7,7 +7,7 @@ from flask import request, jsonify
 
 from backend.helper.ttapi import TTApi
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='frontend/build', static_url_path='')
 ttApi = TTApi()
 
 
