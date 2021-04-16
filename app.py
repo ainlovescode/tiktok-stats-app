@@ -4,8 +4,7 @@ monkey.patch_all()
 
 from flask import Flask, make_response
 from flask import request, jsonify
-
-from backend.helper.ttapi import TTApi
+from backend.ttapi import TTApi
 
 app = Flask(__name__, static_folder='frontend/build', static_url_path='')
 ttApi = TTApi()
