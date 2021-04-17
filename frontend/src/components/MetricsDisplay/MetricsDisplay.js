@@ -1,9 +1,9 @@
 import MetricsDisplayOverview from "./MetricsDisplayOverview/MetricsDisplayOverview";
 
-export default function MetricsDisplay() {
+export default function MetricsDisplay(props) {
     return (
         <div className="metrics-display">
-            <MetricsDisplayOverview />
+            <MetricsDisplayOverview username={props.username} profileData={props.profileData}/>
         </div>
     )
 }
