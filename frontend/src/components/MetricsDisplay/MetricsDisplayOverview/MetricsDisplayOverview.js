@@ -15,7 +15,7 @@ export default function MetricsDisplayOverview (props) {
             <div className="user__metrics" display="table">
                 <div className="user-profile" display="table-row">
                     <div className="bold user-profile__rate">
-                        {props.profile_rate} %</div>
+                        {props.profileEngRate} %</div>
                     <em>Profile Engagement Rate</em>
                 </div>
             </div>
