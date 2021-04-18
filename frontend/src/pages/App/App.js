@@ -11,11 +11,11 @@ function App() {
     const [username, setUsername] = React.useState("");
     const [apiResponse, setApiResponse] = React.useState()
 
-    async function onSubmit(username) {
+    async function onSubmit(formUsername) {
 
         try{
-            axios.get('http://localhost:5000/analytics/' + username ).then(response => {
-                setUsername(username)
+            axios.get('http://localhost:5000/analytics/' + formUsername ).then(response => {
+                setUsername(formUsername)
                 setApiResponse(response)
             }).catch(error => {
                 console.log(error)
@@ -31,7 +31,7 @@ function App() {
       <div className="content">
           < UserForm onSubmit={onSubmit}/>
           { apiResponse && (
-              < MetricsDisplay username={username} apiResponse={apiResponse}/>
+              < MetricsDisplay userInfo={apiResponse["user_info"]} analytics={apiResponse["analytics"]}/>
               )}
       </div>
 

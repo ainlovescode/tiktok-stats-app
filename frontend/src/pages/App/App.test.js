@@ -7,24 +7,18 @@ import MetricsDisplay from "../../components/MetricsDisplay/MetricsDisplay";
 
 import fakeApiResponse from "../../mocks/fake_analytics_response.json"
 import { act } from 'react-dom/test-utils';
-
-
-const whenStable = async () => {
-    await act(async () => {
-        await new Promise((resolve) => setTimeout(resolve, 0));
-    });
-};
-
 import axios from "axios";
 
-jest.mock('axios');
 
 describe("App", function () {
-    function flushPromises() {
-        return new Promise(resolve => setImmediate(resolve));
-    }
 
-    const fakeUsername = "fakeUsername"
+    jest.mock('axios');
+
+    const whenStable = async () => {
+        await act(async () => {
+            await new Promise((resolve) => setTimeout(resolve, 0));
+        });
+    };
 
     beforeEach( async () => {
         axios.get=jest.fn().mockResolvedValueOnce(fakeApiResponse);
@@ -48,6 +42,7 @@ describe("App", function () {
 
     it("should render metrics display when username is submitted", async function (){
         const apiUrl = "http://localhost:5000/"
+        const fakeUsername = fakeApiResponse.user_info.username;
 
         const wrapper = mount(<App/>);
 
