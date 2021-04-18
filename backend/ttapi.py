@@ -42,7 +42,7 @@ class TTApi:
         num_of_posts = self.getNumOfPosts()
         num_of_followers = self.getFollowers()
 
-        post_metadata_all = {}
+        post_metadata_all = []
 
         total_eng = 0
         total_views = 0
@@ -57,7 +57,7 @@ class TTApi:
 
             post_metadata = self.extract_post_eng_rate_caption(desc_trunc, post_eng, post_views)
 
-            post_metadata_all[post_idx] = post_metadata
+            post_metadata_all.append(post_metadata)
 
         profile_eng_rate = self.calculateProfileEngRate(total_eng, num_of_followers)
         average_views = total_views / num_of_posts
