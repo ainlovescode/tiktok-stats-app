@@ -110,7 +110,3 @@ class TTApi:
 
         return userInfo
 
-
-ttApi = TTApi()
-ttApi.setUser("ianjeevan")
-print(ttApi.getUserInfoAnalytics())
