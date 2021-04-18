@@ -2,6 +2,7 @@ import MetricsDisplayOverview from "./MetricsDisplayOverview/MetricsDisplayOverv
 import React from 'react';
 import MetricsDisplayTable from "./MetricsDisplayTable/MetricsDisplayTable";
 import "./MetricsDisplay.css"
+import MetricsDisplayFinePrint from "./MetricsDisplayFinePrint/MetricsDisplayFinePrint";
 
 export default function MetricsDisplay(props) {
     return (
@@ -9,6 +10,7 @@ export default function MetricsDisplay(props) {
             <MetricsDisplayOverview userInfo={props.userInfo}
                                     analytics={props.analytics}/>
             <MetricsDisplayTable postMetadataAll={props.analytics["post_metadata_all"]}/>
+            <MetricsDisplayFinePrint />
         </div>
     )
 }
