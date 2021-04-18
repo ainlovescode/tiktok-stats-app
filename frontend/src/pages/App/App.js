@@ -7,21 +7,19 @@ import MetricsDisplay from "../../components/MetricsDisplay/MetricsDisplay";
 
 import axios from "axios";
 
-function App() {
-    const [username, setUsername] = React.useState("");
-    const [apiResponse, setApiResponse] = React.useState()
+export default function App() {
+    const [apiResponse, setApiResponse] = React.useState();
 
     async function onSubmit(formUsername) {
 
         try{
             axios.get('http://localhost:5000/analytics/' + formUsername ).then(response => {
-                setUsername(formUsername)
-                setApiResponse(response)
+                setApiResponse(response);
             }).catch(error => {
-                console.log(error)
+                console.log(error);
             })
         } catch(err) {
-            console.log(err.toString())
+            console.log(err.toString());
         }
     }
     return (
@@ -31,7 +29,8 @@ function App() {
       <div className="content">
           < UserForm onSubmit={onSubmit}/>
           { apiResponse && (
-              < MetricsDisplay userInfo={apiResponse["user_info"]} analytics={apiResponse["analytics"]}/>
+              < MetricsDisplay userInfo={apiResponse["data"]["user_info"]}
+                               analytics={apiResponse["data"]["analytics"]}/>
               )}
       </div>
 
@@ -39,5 +38,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
