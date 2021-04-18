@@ -15,9 +15,8 @@ function App() {
 
         try{
             axios.get('http://localhost:5000/analytics/' + username ).then(response => {
-                console.log("SUCCESS", response)
                 setUsername(username)
-                setApiResponse(response["data"])
+                setApiResponse(response)
             }).catch(error => {
                 console.log(error)
             })
