@@ -37,7 +37,7 @@ class TTApi:
 
         self.posts = self.tiktokApi.by_username(username, num_of_posts)
 
-    def getUserMetrics(self):
+    def getUserInfoAnalytics(self):
         user_metrics = {}
         user_metrics["user_info"] = self.getUserInfo()
         user_metrics["analytics"] = self.getAnalytics()
@@ -113,7 +113,4 @@ class TTApi:
 
 ttApi = TTApi()
 ttApi.setUser("ianjeevan")
-print(ttApi.getUserMetrics())
-
-# analytics_response = ttApi.getAnalytics()
-# print(analytics_response)
+print(ttApi.getUserInfoAnalytics())

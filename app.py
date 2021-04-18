@@ -20,8 +20,8 @@ def hello():
 
 
 @app.route('/analytics/<username>', methods=['GET'])
-def getAnalytics(username):
+def getUserInfoAnalytics(username):
     if request.method == 'GET':
         ttApi.setUser(username)
-        analytics_response = ttApi.getAnalytics()
-        return analytics_response
+        response = ttApi.getUserInfoAnalytics()
+        return response
