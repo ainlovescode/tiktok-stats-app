@@ -2,11 +2,15 @@ from gevent import monkey
 
 monkey.patch_all()
 
-from flask import Flask, make_response
+from flask import Flask
 from flask import request, jsonify
+from flask_cors import CORS  # comment this on deployment
 from backend.ttapi import TTApi
 
-app = Flask(__name__, static_folder='frontend/build', static_url_path='')
+app = Flask(__name__, static_url_path='', static_folder='frontend/build')
+
+CORS(app)  # comment this on deployment
+
 ttApi = TTApi()
 
 
@@ -20,11 +24,4 @@ def getAnalytics(username):
     if request.method == 'GET':
         ttApi.setUser(username)
         analytics_response = ttApi.getAnalytics()
-        return make_response(jsonify(isError=False,
-                                     message="Success",
-                                     statusCode=200,
-                                     data=analytics_response), 200)
-
-
-if __name__ == '__main__':
-    app.run(host='0.0.0.0')
+        return analytics_response
