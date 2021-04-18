@@ -7,9 +7,9 @@ export default function MetricsDisplay(props) {
 
     return (
         <div className="metrics-display">
-            <MetricsDisplayOverview username={props.username}
-                                    profileEngRate={props.apiResponse.data["profile_eng_rate"]}/>
-            <MetricsDisplayTable postMetadataAll={props.apiResponse.data["post_metadata_all"]}/>
+            <MetricsDisplayOverview userInfo={props.userInfo}
+                                    analytics={props.analytics}/>
+            <MetricsDisplayTable postMetadataAll={props.analytics.post_metadata_all}/>
         </div>
     )
 }
