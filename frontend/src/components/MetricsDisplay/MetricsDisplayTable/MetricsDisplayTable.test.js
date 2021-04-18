@@ -1,4 +1,4 @@
-import {shallow, mount} from 'enzyme';
+import {mount} from 'enzyme';
 import MetricsDisplayTable from "./MetricsDisplayTable";
 import MetricsDisplayTableRow from "./MetricsDisplayTableRow";
 import fakeApiResponse from "../../../mocks/fake_analytics_response.json";
@@ -6,7 +6,7 @@ import React from 'react';
 
 describe("MetricsDisplayTable", function () {
 
-    const fakePostMetadataAll = fakeApiResponse.data.post_metadata_all;
+    const fakePostMetadataAll = fakeApiResponse.analytics.post_metadata_all;
 
     it("should pass metrics list data props properly", function () {
         const wrapper = mount(< MetricsDisplayTable postMetadataAll={fakePostMetadataAll}/>);
