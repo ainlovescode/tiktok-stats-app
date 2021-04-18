@@ -23,3 +23,11 @@ table tr td {
     padding: 8px;
     border: 1px solid darkgray;
 }
+
+.metrics-display-fineprint{
+    font-size: smaller;
+}
+
+em {
+    color: #9c9c9c;
+}
