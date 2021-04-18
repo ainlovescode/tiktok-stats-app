@@ -1,26 +1,26 @@
 {
   "user_info": {
-    "username": "ianjeevan",
-    "display_name": "Ian Jeevan",
-    "follower_count": 89900,
-    "img_url": "https://p16-sign-sg.tiktokcdn.com/aweme/100x100/tiktok-obj/d646c8c8ea0fbc8dcaf8ce134dbd30e7.jpeg?x-expires=1618837200&x-signature=atq6x7UUCy1x95E8dCd9R8auPBk%3D"
+    "username": "fakeUsername",
+    "display_name": "Fake User",
+    "follower_count": 1234,
+    "profile_img_url": "https://example.com/images/profile.png"
   },
   "analytics": {
-    "profile_eng_rate": 7.68,
+    "profile_eng_rate": 1.38,
     "post_metadata_all": [
       {
-        "caption": "#byelingual Ep2: Surgery Room - What other scenari...",
-        "post_eng_rate": 11.32
+        "caption": "Sunset @ Marina Bay Sands #singapore",
+        "post_eng_rate": 1.32
       },
       {
-        "caption": "Collab with the @thebuffessor !! Who should I coll...",
-        "post_eng_rate": 7.83
+        "caption": "Quarantine Day 12 meals!",
+        "post_eng_rate": 40.10
       },
       {
-        "caption": "PLEASE DO NOT TRY THIS AT HOME or DO THIS TO YOUR ...",
-        "post_eng_rate": 8.58
+        "caption": "OMG PLEASE DO NOT TRY THIS AT HOME!",
+        "post_eng_rate": 8.32
       }
     ],
-    "average_views": 69450.0
+    "average_views": 43.0
   }
 }

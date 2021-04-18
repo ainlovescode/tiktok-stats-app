@@ -106,7 +106,7 @@ class TTApi:
         userInfo["username"] = user["userInfo"]["user"]["uniqueId"]
         userInfo["display_name"] = user["userInfo"]["user"]["nickname"]
         userInfo["follower_count"] = user["userInfo"]["stats"]["followerCount"]
-        userInfo["img_url"] = user["userInfo"]["user"]["avatarThumb"]
+        userInfo["profile_img_url"] = user["userInfo"]["user"]["avatarThumb"]
 
         return userInfo
 
