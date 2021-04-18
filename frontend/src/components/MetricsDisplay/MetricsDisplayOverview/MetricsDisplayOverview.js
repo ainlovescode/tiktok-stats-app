@@ -13,15 +13,15 @@ export default function MetricsDisplayOverview (props) {
             <hr/>
             <div className="user__metrics" display="table">
                 <div className="user-profile" display="table-row">
-                    <div className="bold user__follower_count">
-                        {props.userInfo.follower_count} %</div>
                     <em>Followers</em>
+                    <div className="bold user__follower_count">
+                        {props.userInfo.follower_count}</div>
+                    <em>Profile Eng. Rate</em>
                     <div className="bold user__profile_eng_rate">
                         {props.analytics.profile_eng_rate} %</div>
-                    <em>Profile Engagement Rate</em>
-                    <div className="bold user__average_views">
-                        {props.analytics.average_views} %</div>
                     <em>Average Views per TikTok</em>
+                    <div className="bold user__average_views">
+                        {props.analytics.average_views}</div>
                 </div>
             </div>
         </div>

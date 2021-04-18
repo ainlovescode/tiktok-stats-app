@@ -1,7 +1,6 @@
 .metrics-display__overview {
     margin:auto;
-    max-width:75%;
-    min-width:75%;
+    width:80%;
     border: 1px solid lightgray;
 }
 
