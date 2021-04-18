@@ -19,6 +19,9 @@ class TTApi:
         self.user = self.tiktokApi.get_user(username)
         self.setPosts()
 
+    def getUser(self):
+        return self.user
+
     def getUsername(self):
         return self.user["uniqueId"]
 
@@ -33,6 +36,12 @@ class TTApi:
         num_of_posts = self.getNumOfPosts()
 
         self.posts = self.tiktokApi.by_username(username, num_of_posts)
+
+    def getUserMetrics(self):
+        user_metrics = {}
+        user_metrics["user_info"] = self.getUserInfo()
+        user_metrics["analytics"] = self.getAnalytics()
+        return user_metrics
 
     def getAnalytics(self):
         response_analytics = {}
@@ -55,7 +64,7 @@ class TTApi:
             total_eng += post_eng
             total_views += post_views
 
-            post_metadata = self.extract_post_eng_rate_caption(desc_trunc, post_eng, post_views)
+            post_metadata = self.extractPostEngRateCaption(desc_trunc, post_eng, post_views)
 
             post_metadata_all.append(post_metadata)
 
@@ -68,7 +77,7 @@ class TTApi:
 
         return response_analytics
 
-    def extract_post_eng_rate_caption(self, desc_trunc, post_eng, post_views):
+    def extractPostEngRateCaption(self, desc_trunc, post_eng, post_views):
         post_metadata = {}
         post_eng_rate = round((100 * post_eng / post_views), 2)
         post_metadata["caption"] = desc_trunc
@@ -89,3 +98,22 @@ class TTApi:
         post_eng = likes + comments + shares
 
         return post_eng, views, desc_trunc
+
+    def getUserInfo(self):
+        userInfo = {}
+        user = self.getUser()
+
+        userInfo["username"] = user["userInfo"]["user"]["uniqueId"]
+        userInfo["display_name"] = user["userInfo"]["user"]["nickname"]
+        userInfo["follower_count"] = user["userInfo"]["stats"]["followerCount"]
+        userInfo["img_url"] = user["userInfo"]["user"]["avatarThumb"]
+
+        return userInfo
+
+
+ttApi = TTApi()
+ttApi.setUser("ianjeevan")
+print(ttApi.getUserMetrics())
+
+# analytics_response = ttApi.getAnalytics()
+# print(analytics_response)
