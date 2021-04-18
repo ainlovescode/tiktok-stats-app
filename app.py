@@ -9,8 +9,6 @@ from backend.ttapi import TTApi
 
 app = Flask(__name__, static_url_path='', static_folder='frontend/build')
 
-CORS(app)  # comment this on deployment
-
 ttApi = TTApi()
 
 
