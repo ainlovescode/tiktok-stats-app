@@ -16,10 +16,10 @@ export default function MetricsDisplayOverview (props) {
                     <em>Followers</em>
                     <div className="bold user__follower_count">
                         {props.userInfo.follower_count}</div>
-                    <em>Profile Eng. Rate</em>
+                    <em>Profile Eng. Rate <sup>1</sup></em>
                     <div className="bold user__profile_eng_rate">
                         {props.analytics.profile_eng_rate} %</div>
-                    <em>Average Views per TikTok</em>
+                    <em>Average Views per TikTok <sup>2</sup></em>
                     <div className="bold user__average_views">
                         {props.analytics.average_views}</div>
                 </div>

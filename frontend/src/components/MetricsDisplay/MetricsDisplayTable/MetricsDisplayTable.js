@@ -5,7 +5,7 @@ export default function MetricsDisplayTable(props) {
 
     return (
         <div className={"metrics-display__table-container"}>
-            <h2>Post Engagement</h2>
+            <h2>Post Engagement <sup>3</sup></h2>
             <table className={"metrics-display-table"}>
                 <thead>
                 <tr className={"metrics-display__table-row"} style={{fontWeight: 'bold'}}>
