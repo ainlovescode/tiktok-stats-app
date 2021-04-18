@@ -4,11 +4,12 @@ import MetricsDisplayTableRow from "./MetricsDisplayTableRow";
 export default function MetricsDisplayTable(props) {
 
     return (
-        <div>
-            <table id={"metrics-table"}>
+        <div className={"metrics-display__table-container"}>
+            <h2>Post Engagement</h2>
+            <table className={"metrics-display-table"}>
                 <thead>
-                <tr style={{fontWeight: 'bold'}}>
-                    <th>Post Engagement Rate</th>
+                <tr className={"metrics-display__table-row"} style={{fontWeight: 'bold'}}>
+                    <th>Post Eng. Rate (%)</th>
                     <th>Caption</th>
                 </tr>
                 </thead>
