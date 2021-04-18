@@ -1,20 +1,22 @@
 import "./MetricsDisplayOverview.css"
-import profile_photo from "../../../mocks/avatar.png"
 
 export default function MetricsDisplayOverview (props) {
     return (
         <div className="metrics-display__overview">
             <div className="user__profile-photo">
-                <img src={profile_photo} width="64px" alt="profile of tiktok user"/>
+                <img src={props.userInfo.profile_img_url} width="64px" alt="profile of tiktok user"/>
             </div>
-            <div className="user__username">
-                <h3>{props.username}</h3>
-                Sample Name
+            <div >
+                <h3 className="user__username">{props.userInfo.username}</h3>
+                <div className="user__display_name">{props.userInfo.display_name}</div>
             </div>
             <hr/>
             <div className="user__metrics" display="table">
                 <div className="user-profile" display="table-row">
-                    <div className="bold user-profile__rate">
+                    <div className="bold user__follower_count">
+                        {props.userInfo.follower_count} %</div>
+                    <em>Followers</em>
+                    <div className="bold user__profile_eng_rate">
                         {props.profileEngRate} %</div>
                     <em>Profile Engagement Rate</em>
                 </div>
