@@ -13,7 +13,7 @@ export default function App() {
     async function onSubmit(formUsername) {
 
         try{
-            axios.get(' https://tiktok-stats-app.herokuapp.com/analytics/' + formUsername ).then(response => {
+            axios.get(' http://localhost:5000/analytics/' + formUsername ).then(response => {
                 setApiResponse(response);
             }).catch(error => {
                 console.log(error);

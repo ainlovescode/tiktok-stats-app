@@ -8,7 +8,7 @@ from flask_cors import CORS  # comment this on deployment
 from backend.ttapi import TTApi
 
 app = Flask(__name__, static_url_path='', static_folder='frontend/build')
-
+CORS(app)
 ttApi = TTApi()
 
 
